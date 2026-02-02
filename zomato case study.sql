@@ -1,3 +1,8 @@
+-- Zomato SQL Case Study
+-- Author: Devesh Kumar
+-- Database: MySQL
+
+
 -- Select a particular Database 
 USE zomato;
 
