@@ -13,7 +13,7 @@ The case study focuses on using SQL as an **analytical tool** rather than just a
 - Aggregations (`SUM`, `AVG`, `COUNT`)
 - `GROUP BY` & `HAVING`
 - Date functions
-- NULL handling (`COALESCE`)
+- NULL handling
 - Business-oriented analysis
 
 ---
