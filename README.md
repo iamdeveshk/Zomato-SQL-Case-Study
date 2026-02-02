@@ -10,7 +10,7 @@ The case study focuses on using SQL as an **analytical tool** rather than just a
 ## 🛠 Tools & Skills
 - SQL (MySQL)
 - Multi-table JOINs
-- Aggregations (`SUM`, `AVG`, `COUNT`)
+- Aggregations (`SUM`, `AVG`, `COUNT`,`MAX`,`MIN`,etc)
 - `GROUP BY` & `HAVING`
 - Date functions
 - NULL handling
