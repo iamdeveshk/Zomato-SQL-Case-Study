@@ -1,42 +1,52 @@
 # 🍽️ Zomato SQL Case Study
 
 ## 📌 Overview
-This project analyzes a **Zomato-style food delivery database** using SQL to extract meaningful **business insights** related to customers, restaurants, revenue, and delivery partners.
+This project analyzes a **Zomato-style food delivery database** using SQL to derive **actionable business insights** related to user behavior, restaurant performance, revenue trends, and delivery partner earnings.
 
-The goal of this case study is to demonstrate how SQL can be used not just for querying data, but for **analytical thinking and decision-making**.
+The case study focuses on using SQL as an **analytical tool** rather than just a querying language.
 
 ---
 
 ## 🛠 Tools & Skills
 - SQL (MySQL)
-- Joins (INNER JOIN)
+- Multi-table JOINs
 - Aggregations (`SUM`, `AVG`, `COUNT`)
 - `GROUP BY` & `HAVING`
 - Date functions
 - NULL handling (`COALESCE`)
-- Business analysis
+- Business-oriented analysis
 
 ---
 
 ## 📁 Dataset Structure
-The database consists of the following tables:
+The database consists of **7 interconnected tables**:
 
 | Table Name          | Description |
 |---------------------|-------------|
+| `users`             | User / customer information |
 | `orders`            | Order-level transaction data |
-| `customers`         | Customer information |
-| `restaurants`       | Restaurant details |
+| `order_details`     | Line-item details per order |
+| `restaurants`       | Restaurant metadata |
+| `menu`              | Restaurant-wise menu mapping |
 | `food`              | Food item catalog |
-| `delivery_partner`  | Delivery partner data |
+| `delivery_partner`  | Delivery partner information |
+
+---
+
+## 🔗 Entity Relationships (High Level)
+- One user → many orders  
+- One order → many order items (`order_details`)  
+- Restaurants → menus → food items  
+- Each order is assigned to one delivery partner  
 
 ---
 
 ## 🧠 Business Questions Answered
 - What is the total revenue generated?
-- Which restaurants contribute the most revenue?
-- Who are the highest-spending customers?
+- Which restaurants generate the highest revenue?
+- Who are the highest-spending users?
 - What are the most frequently ordered food items?
-- How does revenue vary month-wise?
+- How does revenue change month-wise?
 - Which delivery partners earn the most?
 
 ---
@@ -45,5 +55,5 @@ The database consists of the following tables:
 
 ### Total Revenue Generated
 ```sql
-SELECT SUM(amount) AS total_revenue
-FROM orders;
+SELECT SUM(od.price * od.quantity) AS total_revenue
+FROM order_details od;
