@@ -42,18 +42,16 @@ The database consists of **7 interconnected tables**:
 ---
 
 ## 🧠 Business Questions Answered
-- What is the total revenue generated?
-- Which restaurants generate the highest revenue?
-- Who are the highest-spending users?
-- What are the most frequently ordered food items?
-- How does revenue change month-wise?
-- Which delivery partners earn the most?
+- The number of orders placed by each customers.
+- Restaurant with most number of menu items. 
+- Number of votes and average rating for all the restaurants.
+- Restaurant with max revenue in a given month (May).
+- Restaurant with sales> x
+- Customers who have never ordered (using SQL SET operators).
+- Show order details of a particular customer in a given date range (Range: 15May- 15 June 2022).
+- Find most costly restaurants (Avg price / dish).
+- Delivery partner compensation using the formula (#deliveries*100 + 10000*avg_rating).
+- All the veg restaurants.
+- Minimum and Maximum order value for all the customers.
 
 ---
-
-## 📊 Sample Queries
-
-### Total Revenue Generated
-```sql
-SELECT SUM(od.price * od.quantity) AS total_revenue
-FROM order_details od;
